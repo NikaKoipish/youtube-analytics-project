@@ -17,7 +17,8 @@ class Channel:
         self.subscriberCount = int(dict_youtube["items"][0]["statistics"]["subscriberCount"])
         self.video_count = dict_youtube["items"][0]["statistics"]["videoCount"]
         self.viewCount = dict_youtube["items"][0]["statistics"]["viewCount"]
-        self.url = dict_youtube["items"][0]["snippet"]["thumbnails"]["default"]["url"]
+        self.url = f"https://www.youtube.com/channel/{self.__channel_id}"
+
 
     def to_json(self, file_name):
         data = {
