@@ -6,9 +6,8 @@ from datetime import timedelta
 class PlayList:
     API_KEY: str = os.getenv('API_YouTube')
 
-    def __init__(self, playlist_id, title=None):
+    def __init__(self, playlist_id):
         self.playlist_id = playlist_id
-        self.title = title
         youtube = build('youtube', 'v3', developerKey=self.API_KEY)
         self.url = f"https://www.youtube.com/playlist?list={self.playlist_id}"
         self.playlist_videos = youtube.playlistItems().list(playlistId=playlist_id,
